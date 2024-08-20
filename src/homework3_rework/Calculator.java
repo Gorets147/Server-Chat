@@ -11,44 +11,23 @@ public class Calculator {
 
 
 
-    public static <V extends Number> V sum(V num1, V num2){
-        if (num1 instanceof Integer && num2 instanceof Integer){
-            return (V) Integer.valueOf(num1.intValue() + num2.intValue());
-        } else if (num1 instanceof Double && num2 instanceof Double){
-            return (V) Double.valueOf(num1.doubleValue() + num2.doubleValue());
-        } else {
-            throw new IllegalArgumentException("Unsupported type");
-        }
+    public static <V extends Number> double sum(V num1, V num2){
+        return num1.doubleValue() + num2.doubleValue();
     }
 
-    public static <V extends Number> V subtract(V num1, V num2){
-        if (num1 instanceof Integer && num2 instanceof Integer){
-            return (V) Integer.valueOf(num1.intValue() - num2.intValue());
-        } else if (num1 instanceof Double && num2 instanceof Double){
-            return (V) Double.valueOf(num1.doubleValue() - num2.doubleValue());
-        } else {
-            throw new IllegalArgumentException("Unsupported type");
-        }
+    public static <V extends Number> double subtract(V num1, V num2){
+        return num1.doubleValue() - num2.doubleValue();
     }
 
-    public static <V extends Number> V multiply(V num1, V num2){
-        if (num1 instanceof Integer && num2 instanceof Integer){
-            return (V) Integer.valueOf(num1.intValue() * num2.intValue());
-        } else if (num1 instanceof Double && num2 instanceof Double){
-            return (V) Double.valueOf(num1.doubleValue() * num2.doubleValue());
-        } else {
-            throw new IllegalArgumentException("Unsupported type");
-        }
+    public static <V extends Number> double multiply(V num1, V num2){
+        return num1.doubleValue() * num2.doubleValue();
     }
 
-    public static <V extends Number> V divide(V num1, V num2){
-        if (num1 instanceof Integer && num2 instanceof Integer){
-            return (V) Integer.valueOf(num1.intValue() / num2.intValue());
-        } else if (num1 instanceof Double && num2 instanceof Double){
-            return (V) Double.valueOf(num1.doubleValue() / num2.doubleValue());
-        } else {
-            throw new IllegalArgumentException("Unsupported type");
+    public static <V extends Number> double divide(V num1, V num2){
+        if(num2.doubleValue() == 0){
+            throw new ArithmeticException("Division by zero is not allowed");
         }
+        return num1.doubleValue() / num2.doubleValue();
     }
 
 }

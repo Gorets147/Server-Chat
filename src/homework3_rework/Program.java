@@ -4,12 +4,8 @@ public class Program {
     public static void main(String[] args) {
         Calculator calc = new Calculator();
 
-        int multResult = calc.multiply(3, 2);
-        System.out.println(multResult);
         double multiplyResult = calc.multiply(3.3, 2.5);
         System.out.println(multiplyResult);
-        int divResult = calc.divide(10, 2);
-        System.out.println(divResult);
         double divideResult = calc.divide(3.3, 2.5);
         System.out.println(divideResult);
 
@@ -53,7 +49,7 @@ public class Program {
             return false;
         }
         for(int i = 0; i < arr1.length; i++){
-            if(!arr1[i].equals(arr2[i])){
+            if(!arr1[i].getClass().equals(arr2[i].getClass())){
                 return false;
             }
         }
